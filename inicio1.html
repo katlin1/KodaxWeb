@@ -17,24 +17,30 @@
               </div>
         <div class="formulario">
             <h2>Iniciar Sesion</h2>
-            <form action = "#">
+            <form action ="https://files.000webhost.com/public_html/BDRemota1/validacion.php" >
 				<input type="text" placeholder="Correo" required>
-				<input type="password" placeholder="Contraseña" required>
+				<input type="password" placeholder="Contrasena" required>
 				<button type="submit" class="w3-button w3-round-large w3-blue">Iniciar Sesión</button>
 			</form>	
         </div>
                 <div class="formulario">
                     <h2>Crea tu Cuenta</h2>
-                    <form action = "#">
-                        <input type="text" placeholder="Nombre de la Clinica" required>
-                        <input type="text" placeholder="Doctor(a)" required>
-                        <input type="email"placeholder="Correo Electronico" required>
-                        <input type="password" placeholder="Contraseña" required>
-                        <input type="text" placeholder="Especialidad" required>
-                        <input type="text" placeholder="Dirección" required>
-                        <input type="text" placeholder="Horario de Atención" required>
-                        <input type="text" placeholder="Numero de Teléfono" required>
-                        <button type="submit" class="w3-button w3-round-large w3-blue">Registrarse</button>
+                    <form method="post"  action = "insertar.php">
+                        <input type="text" placeholder="Nombre de la Clinica" required name='nomCli'>
+                        <input type="text" placeholder="Doctor(a)" required name='nombre' >
+                        <input type="email"placeholder="Correo Electronico" required name='corre'>
+                        <input type="password" placeholder="Contraseña" required name='contra'>
+                        <select name="Especialidad">
+                            <option value="odontologia">Odontologia</option>
+                            <option value="oftalmologia" selected>Oftalmologia</option>
+                            <option value="cardiologia">Cardiologia</option>
+                            <option value="pediatria">Pediatria</option>
+                            <option value="ginecologia">Ginecologia</option>
+                        </select>
+                        <input type="text" placeholder="Dirección" required name='dire'>
+                        <input type="text" placeholder="Horario de Atención" required name='hora'>
+                        <input type="text" placeholder="Numero de Teléfono" required name='tele'>
+                        <button type="submit" class="w3-button w3-round-large w3-blue">Registrarse </button>
                     </form>
                 </div>
 

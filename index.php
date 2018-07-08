@@ -3,7 +3,12 @@
 <html>
 <title>Principal |KODAX.Clinical|</title>
 <body background="imagenkodaxweb/fondo2.jpg"></body>
-
+<?php
+    require ("conexion.php");
+    $resultado ="SELECT * FROM categorias";
+    $stmt=$conexion->query($resultado);
+    $rows = $stmt->fetchAll();
+?>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,36 +41,33 @@
 
     <!-- First Photo Grid-->
     <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <?php
+        $n=1;
+        foreach ($rows as $s):
+    ?>
         <div class="w3-quarter">
-            <img src="imagenkodaxweb/ge.png" alt="general" style="width:100%">
-            <h3>Busca tu médico</h3>
-            <p>La medicina general constituye el primer nivel de atención médica. El médico general es un profesional
-                capacitado para diagnosticar y manejar diferentes patologías comunes y derivar al especialista indicado cuando corresponda.  .</p>
+            <img src="imagenes/<?php echo $s['imagen']; ?>" alt="general" style="width:100%">
+            <h3><?php echo $s['titulo']; ?></h3>
+            <p><?php echo $s['descripcion']; ?></p>
         </div>
-        <div class="w3-quarter">
-            <img src="imagenkodaxweb/oftal.png" alt="ginecologia" style="width:100%">
-            <h3>¿Necesitas un Ginecologo(a)?</h3>
-            <p>Parte de la medicina que se ocupa del aparato genital femenino y sus enfermedades, incluidas las glándulas mamarias.</p>
-        </div>
-        <div class="w3-quarter">
-            <img src="imagenkodaxweb/odon.png" alt="odontologia" style="width:100%">
-            <h3>¿Necesitas un Odontologo(a)?</h3>
-            <p>La odontología es una de las ciencias de la salud que se encarga del diagnóstico, tratamiento y prevención de las
-                enfermedades  de los dientes, las encías, el tejido periodontal,
-                el maxilar superior, el maxilar inferior y la articulación temporomandibular.</p>
-        </div>
-        <div class="w3-quarter">
-            <img src="imagenkodaxweb/oftal.png" alt="oftalmologia" style="width:100%">
-            <h3>¿Necesitas un Oftalmologo(a)?</h3>
-            <p>Un oftalmólogo realiza un examen ocular con ayuda de una lámpara de hendidura.
-                La oftalmología​ es la especialidad médica que
-                estudia las enfermedades de ojo y su tratamiento, incluyendo el globo ocular, su musculatura, el sistema lagrimal
-                y los párpados.</p>
-        </div>
-    </div>
+     <?php
+        if($n==4||$n==8){
+     ?>
+            </div>
+     <?php
+        }
+        if($n==4){
+        ?>
+            <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+        <?php
+        }
+        $n++;
+        endforeach;
+    ?>
+
 
     <!-- Second Photo Grid-->
-    <div class="w3-row-padding w3-padding-16 w3-center">
+    <!--<div class="w3-row-padding w3-padding-16 w3-center">
         <div class="w3-quarter">
             <img src="imagenkodaxweb/iconocardi.png" alt="cardiología" style="width:100%">
             <h3>¿Necesitas un cardiologo(a)?</h3>
@@ -91,7 +93,7 @@
             <p>Parte de la medicina que se ocupa del estudio del crecimiento y el desarrollo de los
                 niños hasta la adolescencia, así como del tratamiento de sus enfermedades.</p>
         </div>
-    </div>
+    </div>-->
 
 
 
