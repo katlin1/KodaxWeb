@@ -91,6 +91,12 @@ contenedor-form .toggle:hover{
 .contenedor-form input[type="submit"]:hover{
     background: rgba(0,117,217,0.7);
 }
+
+.contenedor-form select[type="Especialidad"]:hover{
+    font-size: 70px;
+    letter-spacing: 10px;
+    background: rgba(0,117,217,0.7);
+}
 .contenedor-form .reset-password{
     background: rgba(0,117,217,0.7);
     width: 100%;
